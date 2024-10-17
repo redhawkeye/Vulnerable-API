@@ -9,7 +9,7 @@ on:
       - dast
 
 jobs:
-  build:
+  dast:
     runs-on: ubuntu-latest
     steps:
     - name: Check out code
@@ -27,7 +27,7 @@ jobs:
         fi
 
     - name: Scanning unpatched website
-      run: python swaggervs.py https://vulnapi.csalab.app
+      run: python swaggervs.py ${WEB_VULN}
     
     - name: Scanning patched website
-      run: python swaggervs.py https://vulnapi-patch.csalab.app
+      run: python swaggervs.py $(WEB_PATCHED)
