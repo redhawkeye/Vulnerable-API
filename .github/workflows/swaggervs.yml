@@ -27,7 +27,7 @@ jobs:
         fi
 
     - name: Scanning unpatched website
-      run: python swaggervs.py $WEB_VULN
+      run: python swaggervs.py https://vulnapi.csalab.app
     
     - name: Scanning patched website
-      run: python swaggervs.py $WEB_PATCHED
+      run: python swaggervs.py https://vulnapi-patch.csalab.app
